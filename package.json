@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@tiptap/core": "^2.26.1",
+    "@tiptap/extension-strike": "^2.26.1",
     "@tiptap/extension-text-style": "^2.26.1",
+    "@tiptap/extension-underline": "^2.0.2",
     "@tiptap/pm": "^2.26.1",
     "@tiptap/react": "^2.26.1",
     "@tiptap/starter-kit": "^2.26.1",
@@ -21,6 +23,7 @@
     "typescript": "^5.9.2"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.15.4"
+    "@parcel/transformer-sass": "^2.15.4",
+    "@types/react": "^19.1.9"
   }
 }
