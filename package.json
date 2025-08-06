@@ -1,0 +1,26 @@
+{
+  "name": "vettam-editor",
+  "version": "1.0.0",
+  "description": "Vettam Editor",
+  "license": "ISC",
+  "author": "Raja Kumar - Vettam",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@tiptap/core": "^2.26.1",
+    "@tiptap/extension-text-style": "^2.26.1",
+    "@tiptap/pm": "^2.26.1",
+    "@tiptap/react": "^2.26.1",
+    "@tiptap/starter-kit": "^2.26.1",
+    "babel": "^6.23.0",
+    "parcel": "^2.15.4",
+    "react": "^18.1.1",
+    "react-dom": "^18.1.1",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.15.4"
+  }
+}
