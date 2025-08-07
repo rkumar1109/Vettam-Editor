@@ -3,7 +3,6 @@
     margin-top: 0;
   }
 
-  /* List styles */
   ul,
   ol {
     padding: 0 1rem;
@@ -15,15 +14,12 @@
     }
   }
 
-  /* Heading styles */
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    width: 20px;
-    height: 20px;
     line-height: 1.1;
     margin-top: 2.5rem;
     text-wrap: pretty;
@@ -53,7 +49,6 @@
     font-size: 1rem;
   }
 
-  /* Code and preformatted text styles */
   code {
     background-color: var(--purple-light);
     border-radius: 0.4rem;
