@@ -85,3 +85,41 @@
     margin: 2rem 0;
   }
 }
+
+.tiptap {
+  max-width: 816px;
+  /* A4 width in pixels approx */
+  margin: auto;
+
+  .page {
+    background-color: #f8f8f8;
+    margin-bottom: 40px;
+    /* page gap */
+    min-height: 1056px;
+    /* A4 height approx in pixels */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  .header,
+  .footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0 16px;
+    font-size: 0.8rem;
+    color: #666;
+  }
+
+  .header {
+    top: 0;
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .footer {
+    bottom: 0;
+    height: 50px;
+    border-top: 1px solid #ddd;
+  }
+}

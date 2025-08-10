@@ -1,4 +1,5 @@
-import './styles.scss'
+import Underline from '@tiptap/extension-underline'
+import '../styles.scss'
 
 import { TextStyle } from '@tiptap/extension-text-style'
 import type { Editor } from '@tiptap/react'
@@ -6,7 +7,7 @@ import { EditorContent, useEditor, useEditorState } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import React from 'react'
 
-const extensions = [TextStyle, StarterKit]
+const extensions = [TextStyle, StarterKit, Underline]
 
 function MenuBar({ editor }: { editor: Editor }) {
   // Read the current editor's state, and re-render the component when it changes
@@ -18,6 +19,8 @@ function MenuBar({ editor }: { editor: Editor }) {
         canBold: ctx.editor.can().chain().toggleBold().run() ?? false,
         isItalic: ctx.editor.isActive('italic') ?? false,
         canItalic: ctx.editor.can().chain().toggleItalic().run() ?? false,
+        isUnderline: ctx.editor.isActive('Underline') ?? false,
+        canUnderline: ctx.editor.can().chain().toggleUnderline().run() ?? false,
         isStrike: ctx.editor.isActive('strike') ?? false,
         canStrike: ctx.editor.can().chain().toggleStrike().run() ?? false,
         isCode: ctx.editor.isActive('code') ?? false,
@@ -56,6 +59,13 @@ function MenuBar({ editor }: { editor: Editor }) {
           className={editorState.isItalic ? 'is-active' : ''}
         >
           Italic
+        </button>
+        <button
+          onClick={() => editor.chain().focus().toggleUnderline().run()}
+          disabled={!editorState.canUnderline}
+          className={editorState.isUnderline ? 'is-active' : ''}
+        >
+          <u>U</u>
         </button>
         <button
           onClick={() => editor.chain().focus().toggleStrike().run()}
@@ -188,8 +198,8 @@ export default () => {
   })
   return (
     <div>
-    {editor &&  <MenuBar editor={editor} />}
-    {editor &&  <EditorContent editor={editor} />}
+      {editor && <MenuBar editor={editor} />}
+      {editor && <EditorContent editor={editor} />}
     </div>
   )
 }
