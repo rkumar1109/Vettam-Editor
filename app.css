@@ -1,0 +1,189 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Tiptap Editor Styles */
+.tiptap-editor {
+  position: relative;
+  z-index: 1;
+}
+
+.ProseMirror {
+  outline: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 12pt;
+  font-family: 'Times New Roman', Times, serif;
+  color: #333;
+}
+
+.ProseMirror h1 {
+  font-size: 18pt;
+  font-weight: bold;
+  margin: 0 0 12pt 0;
+  color: #1a1a1a;
+}
+
+.ProseMirror h2 {
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 12pt 0 8pt 0;
+  color: #1a1a1a;
+}
+
+.ProseMirror h3 {
+  font-size: 12pt;
+  font-weight: bold;
+  margin: 8pt 0 6pt 0;
+  color: #1a1a1a;
+}
+
+.ProseMirror p {
+  margin: 0 0 12pt 0;
+  text-align: justify;
+}
+
+.ProseMirror ul,
+.ProseMirror ol {
+  margin: 0 0 12pt 24pt;
+  padding: 0;
+}
+
+.ProseMirror li {
+  margin: 0 0 4pt 0;
+}
+
+/* Page Break Styles */
+.page-break-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+.page-break-indicator {
+  user-select: none;
+  margin: 16pt 0;
+}
+
+/* Page Container Styles */
+.page-container {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  .App {
+    background: white;
+  }
+
+  /* Hide toolbar when printing */
+  .bg-white.border-b {
+    display: none !important;
+  }
+
+  /* Hide page controls */
+  .bg-gray-100 {
+    background: white !important;
+    padding: 0 !important;
+  }
+
+  .page-container {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .page-container:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  /* Ensure headers and footers show in print */
+  .page-container div[style*="position: absolute"] {
+    position: absolute !important;
+  }
+
+  /* Page break handling */
+  .page-break-after {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .page-break-indicator {
+    display: none;
+  }
+}
+
+/* CSS for print page setup */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .page-container {
+    width: 95%;
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-container {
+    width: 100%;
+    transform: scale(0.6);
+    transform-origin: top center;
+  }
+
+  .bg-white.border-b {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+/* Selection styles */
+.ProseMirror::selection {
+  background: #b3d4fc;
+}
+
+.ProseMirror ::-moz-selection {
+  background: #b3d4fc;
+}
+
+/* Focus styles */
+.page-container:focus-within {
+  ring: 2px solid #3b82f6;
+  ring-opacity: 50%;
+}
