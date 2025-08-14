@@ -72,6 +72,13 @@ body {
 }
 
 /* Page Break Styles */
+.page-break {
+  display: block;
+  height: 0;
+  break-after: page;
+  page-break-after: always;
+}
+
 .page-break-wrapper {
   margin: 0;
   padding: 0;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NodeViewWrapper } from '@tiptap/react';
-import { Separator } from 'lucide-react';
+// import { Minus } from 'lucide-react';
 import { Minus } from 'lucide-react';
 
 const PageBreak = ({ node, deleteNode }) => {

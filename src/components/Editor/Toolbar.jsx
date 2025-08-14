@@ -8,7 +8,7 @@ import {
     Type,
     Printer,
     FileText,
-    Separator
+    Minus
 } from 'lucide-react';
 
 const Toolbar = ({ editor, onInsertPageBreak, onPrint, currentPage, totalPages }) => {
